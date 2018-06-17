@@ -1,4 +1,3 @@
-PROJECT := $(shell readlink $(dir $(lastword $(MAKEFILE_LIST))) -f)
 PROJECT := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 
 CXX = mpic++
