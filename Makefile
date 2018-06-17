@@ -1,6 +1,7 @@
 PROJECT := $(shell readlink $(dir $(lastword $(MAKEFILE_LIST))) -f)
+PROJECT := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 
-CXX = g++
+CXX = mpic++
 CXXFLAGS = -O3 \
            -std=c++11 \
            -Wall \
@@ -18,7 +19,7 @@ THIRD_PARTY_LIB = $(THIRD_PARTY)/lib
 
 INC_FLAGS = -I$(HEADERS_DIR)
 INC_FLAGS += -I$(THIRD_PARTY_INC)
-LD_FLAGS = -L$(THIRD_PARTY_LIB) -lzmq -lmpich -lmpl
+LD_FLAGS = -L$(THIRD_PARTY_LIB) -lzmq -lmpl
 
 LIB_SRC_DIR = $(PROJECT)/src/multiverso
 SERVER_SRC_DIR = $(PROJECT)/src/multiverso_server
