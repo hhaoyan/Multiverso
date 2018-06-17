@@ -18,7 +18,7 @@ THIRD_PARTY_LIB = $(THIRD_PARTY)/lib
 
 INC_FLAGS = -I$(HEADERS_DIR)
 INC_FLAGS += -I$(THIRD_PARTY_INC)
-LD_FLAGS = -L$(THIRD_PARTY_LIB) -lzmq -lmpl
+LD_FLAGS = -L$(THIRD_PARTY_LIB) -lzmq -lmpl -lpthread
 
 LIB_SRC_DIR = $(PROJECT)/src/multiverso
 SERVER_SRC_DIR = $(PROJECT)/src/multiverso_server
